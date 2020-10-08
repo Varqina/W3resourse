@@ -1,3 +1,8 @@
+
+import sys
+from Python37_win64.Lib import os
+import datetime
+
 """
 Write a Python program to print the following string in a specific format (see the output). Go to the editor
 Sample String : "Twinkle, twinkle, little star, How I wonder what you are! Up above the world so high, Like a diamond in the sky. Twinkle, twinkle, little star, How I wonder what you are" Output :
@@ -10,11 +15,6 @@ Twinkle, twinkle, little star,
 	How I wonder what you are
 
 """
-import sys
-
-from Python37_win64.Lib import os
-
-
 def task1(string):
     # if star, appeared make /n and \t
     string = string.replace("star,", "star,\n\t")
@@ -34,4 +34,16 @@ sString = "Twinkle, twinkle, little star,How I wonder what you are!Up above the 
 def task2():
     print("Python Version: " + str(sys.version_info.major) + "." + str(sys.version_info.minor) + "." + str(sys.version_info.micro))
     os.system("python --version")
-task2()
+#task2()
+
+"""3. Write a Python program to display the current date and time.
+Sample Output :
+Current date and time :
+2014-07-05 14:34:14"""
+def task3():
+    now = datetime.datetime.now()
+    ownTime = str(now.year) + "-" + str(now.month)+"-" + str(now.day) + " " + str(now.hour) + ":" + str(now.minute) + ":" + str(now.second)
+    print("Current date and time :\n" + now.strftime("%Y-%m-%d %H:%M:%S"))
+    print("Current date and time :\n" + ownTime)
+
+task3()
