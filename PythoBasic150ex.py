@@ -10,6 +10,9 @@ Twinkle, twinkle, little star,
 	How I wonder what you are
 
 """
+import sys
+
+from Python37_win64.Lib import os
 
 
 def task1(string):
@@ -25,3 +28,10 @@ def task1(string):
 
 sString = "Twinkle, twinkle, little star,How I wonder what you are!Up above the world so high,Like a diamond in the sky.Twinkle, twinkle, little star, How I wonder what you are"
 #print(task1(sString))
+
+
+"""Write a Python program to get the Python version you are using. Go to the editor"""
+def task2():
+    print("Python Version: " + str(sys.version_info.major) + "." + str(sys.version_info.minor) + "." + str(sys.version_info.micro))
+    os.system("python --version")
+task2()
