@@ -1,4 +1,4 @@
-
+import math
 import sys
 from Python37_win64.Lib import os
 import datetime
@@ -47,3 +47,15 @@ def task3():
     print("Current date and time :\n" + ownTime)
 
 task3()
+
+"""
+Write a Python program which accepts the radius of a circle from the user and compute the area. Go to the editor
+Sample Output :
+r = 1.1
+Area = 3.8013271108436504
+"""
+def task4(r):
+    return float((math.pow(r,2))*math.pi)
+
+print(task4(1.1))
+
