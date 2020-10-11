@@ -59,3 +59,13 @@ def task4(r):
 
 print(task4(1.1))
 
+""" Write a Python program which accepts the user's first and last name and print them in reverse order with a space between them."""
+def task5(name, surname):
+    finalName=""
+    for letter in surname+name:
+        finalName+=letter+" "
+    print(finalName)
+
+task5("Piotr", "Flis")
+
+
