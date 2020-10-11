@@ -68,4 +68,15 @@ def task5(name, surname):
 
 task5("Piotr", "Flis")
 
+""" Own Task1 having name and surname make letters revesred"""
+def own1(name, surname):
+    result=""
+    for letter in reversed(name+surname):
+        result+=letter
+    return result
+print(own1("Radoslaw", "Flis"))
+
+
+
+
 
