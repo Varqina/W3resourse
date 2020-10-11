@@ -76,7 +76,20 @@ def own1(name, surname):
     return result
 print(own1("Radoslaw", "Flis"))
 
+"""6 to do"""
 
+"""Write a Python program to accept a filename from the user and print the extension of that."""
+def task7(filename):
+    extension = ""
+    switch = 0
+    for letter in filename:
+        if switch == 1:#needs to be here to avoid aditional dot in extension name
+            extension += letter
+        if letter == ".":
+            switch = 1
 
+    return extension
+
+print(task7("test.java"))
 
 
