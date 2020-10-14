@@ -1,3 +1,4 @@
+import calendar
 import math
 import sys
 from Python37_win64.Lib import os
@@ -98,6 +99,112 @@ color_list = ["Red","Green","White" ,"Black"]"""
 
 def task8(colors):
     print(colors[0] + " " + colors[len(colors)-1])
+    print(colors[0] + " " + colors[-1])
 colors = ["Red","Green","White" ,"Black"]
 task8(colors)
 
+"""Write a Python program to display the examination schedule. (extract the date from exam_st_date). Go to the editor
+exam_st_date = (11, 12, 2014)
+Sample Output : The examination will start from : 11 / 12 / 2014"""
+
+def task9(examDate):
+    iValueDay = str(examDate.__getitem__(0))
+    iValueMonth = str(examDate.__getitem__(1))
+    if int(iValueDay) < 10:
+        iValueDay = "0" + iValueDay
+    if int(iValueMonth) < 10:
+        iValueMonth = "0" + iValueMonth
+    print("The examination will start from : " + iValueDay + " / " + iValueMonth + " / " + str(examDate.__getitem__(2)))
+
+exam_st_date = (2, 12, 2014)
+task9(exam_st_date)
+
+"""Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn. Go to the editor
+Sample value of n is 5
+Expected Result : 615"""
+def task10(n):
+    value = str(n)
+    result = 0
+    for i in range(1,4):
+        result = result + int(value)
+        value += str(n)
+    return result
+
+
+def task10Own(n):
+    result = 0
+    for i in range(1,4):
+        result = result + n
+        n = n * n
+    return result
+
+print(task10(5))
+
+"""Write a Python program to print the documents (syntax, description etc.) of Python built-in function(s).
+ Sample function : abs()
+Expected Result :
+abs(number) -> number
+Return the absolute value of the argument."""
+
+def task11(function):
+    print(function.__doc__)
+
+task11(abs)
+
+
+"""Write a Python program to print the calendar of a given month and year.
+Note : Use 'calendar' module. """
+def task12(month, year):
+    print(calendar.TextCalendar().formatmonth(year,month))
+
+task12(10,1991)
+
+"""Write a Python program to calculate number of days between two dates.
+Sample dates : (2014, 7, 2), (2014, 7, 11)
+Expected output : 9 days """
+
+def task14(date1, date2):
+
+    delta = datetime.date(date2.__getitem__(0), date2.__getitem__(1), date2.__getitem__(2)) - datetime.date(date1.__getitem__(0), date1.__getitem__(1), date1.__getitem__(2))
+    print(delta.days)
+
+task14((2014, 7, 2), (2014, 7, 11))
+
+
+"""Write a Python program to get the volume of a sphere with radius 6."""
+
+def task15(radius):
+    return ((4*math.pi*radius**3)/3)
+print(task15(6))
+
+"""Write a Python program to get the difference between a given number and 17, if the number is greater than 17 return double the absolute difference."""
+
+def task16(value):
+    result = 17 - value
+    if result < 1:
+        result = 2*(abs(result))
+    return result
+
+print(task16(22))
+
+"""Write a Python program to calculate the sum of three given numbers, if the values are equal then return three times of their sum"""
+
+def task17(value1, value2, value3):
+    return 3 * (value1 + value2 + value3) if value1 == value2 and value2 == value3 else value1 + value2 + value3
+
+print(task17(1,2,3))
+
+"""Write a Python program to get a new string from a given string where "Is" has been added to the front. If the given string already begins with "Is" then return the string unchanged."""
+
+def task18(sValue):
+    return sValue if sValue[0] =="I" and sValue[1] =="s" else "Is"+sValue
+
+print(task18("test"))
+
+"""Write a Python program to get a string which is n (non-negative integer) copies of a given string."""
+def task19(sString, iN):
+    result=""
+    for i in range(iN):
+        result += sString
+    return result
+print(task19("test",5))
