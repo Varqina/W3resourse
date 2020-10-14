@@ -208,3 +208,10 @@ def task19(sString, iN):
         result += sString
     return result
 print(task19("test",5))
+
+"""Write a Python program to find whether a given number (accept from the user) is even or odd, print out an appropriate message to the user."""
+
+def task20(number):
+    return "even" if number%2 == 0 else "odd"
+
+print(task20(20))
