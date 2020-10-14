@@ -93,3 +93,11 @@ def task7(filename):
 print(task7("test.java"))
 
 
+"""Write a Python program to display the first and last colors from the following list. Go to the editor
+color_list = ["Red","Green","White" ,"Black"]"""
+
+def task8(colors):
+    print(colors[0] + " " + colors[len(colors)-1])
+colors = ["Red","Green","White" ,"Black"]
+task8(colors)
+
