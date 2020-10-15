@@ -365,3 +365,24 @@ lTestList = [ 386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 61
     958,743, 527]
 task27(lTestList)
 
+"""Write a Python program to print out a set containing all the colors from color_list_1 which are not present in color_list_2. Go to the editor
+Test Data :
+color_list_1 = set(["White", "Black", "Red"])
+color_list_2 = set(["Red", "Green"])
+Expected Output :
+{'Black', 'White'}"""
+
+def task28():
+    color_list_1 = set(["White", "Black", "Red"])
+    color_list_2 = set(["Red", "Green"])
+    print(color_list_1-color_list_2)
+    print(color_list_1.difference(color_list_2))
+
+task28()
+
+"""Write a Python program that will accept the base and height of a triangle and compute the area."""
+
+def task29(fBase, fHeight):
+    return 0.5 * fBase * fHeight
+
+print(task29(1.222, 3.444))
