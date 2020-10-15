@@ -310,4 +310,58 @@ def task23(cCharacter):
     except ValueError:
         return False
 
+
 print(task23('a'))
+
+"""Write a Python program to check whether a specified value is contained in a group of values"""
+
+
+def task24(iDigit, lList):
+    for i in lList:
+        if i == iDigit:
+            return True
+    return False
+
+
+lista = [1, 2, 3, 4, 5]
+print(task24(6, lista))
+
+"""Write a Python program to create a histogram from a given list of integers."""
+
+
+def task25(cCharacter, lLIst):
+    for i in lLIst:
+        print(cCharacter * i)
+
+
+task25("@", lista)
+
+"""Write a Python program to concatenate all elements in a list into a string and return it."""
+
+
+def task26(lList):
+    sString = ""
+    for i in lList:
+        sString = sString + str(i)
+    return sString
+
+
+print(task26(lista))
+
+"""Write a Python program to print all even numbers from a given numbers list in the same order and stop the printing if any numbers that come after 237 in the sequence"""
+
+
+def task27(lLista2):
+    lReturnList = []
+    for i in lLista2:
+        if i <= 237:
+            if i % 2 == 0:
+                lReturnList.append(i)
+    print(lReturnList)
+
+lTestList = [ 386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
+    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
+    958,743, 527]
+task27(lTestList)
+
