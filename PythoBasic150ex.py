@@ -1,5 +1,6 @@
 import calendar
 import math
+import platform
 import sys
 from Python37_win64.Lib import os
 import datetime
@@ -359,10 +360,11 @@ def task27(lLista2):
                 lReturnList.append(i)
     print(lReturnList)
 
-lTestList = [ 386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
-    399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
-    815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
-    958,743, 527]
+
+lTestList = [386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+             399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217,
+             815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717,
+             958, 743, 527]
 task27(lTestList)
 
 """Write a Python program to print out a set containing all the colors from color_list_1 which are not present in color_list_2. Go to the editor
@@ -372,22 +374,28 @@ color_list_2 = set(["Red", "Green"])
 Expected Output :
 {'Black', 'White'}"""
 
+
 def task28():
     color_list_1 = set(["White", "Black", "Red"])
     color_list_2 = set(["Red", "Green"])
-    print(color_list_1-color_list_2)
+    print(color_list_1 - color_list_2)
     print(color_list_1.difference(color_list_2))
+
 
 task28()
 
 """Write a Python program that will accept the base and height of a triangle and compute the area."""
 
+
 def task29(fBase, fHeight):
     return 0.5 * fBase * fHeight
+
 
 print(task29(1.222, 3.444))
 
 """Write a Python program to compute the greatest common divisor (GCD) of two positive integers."""
+
+
 def task30(x, y):
     value = y
     while value != 0:
@@ -398,17 +406,18 @@ def task30(x, y):
         else:
             return y
 
-print(task30(282,78))
 
+print(task30(282, 78))
 
 """Write a Python program to get the least common multiple (LCM) of two positive integers"""
+
 
 def task31(x, y):
     if x < y:
         hValue = y
         y = x
         x = hValue
-        i=2
+        i = 2
     while True:
         if i % x == 0 and i % y == 0:
             result = i
@@ -416,35 +425,88 @@ def task31(x, y):
         i += 1
     return result
 
-print(task31(15,17))
+
+print(task31(15, 17))
 
 """Write a Python program to sum of three given integers. However, if two values are equal sum will be zero"""
+
+
 def task32(x, y, z):
     if x == y or y == z or z == x:
         return 0
     return x + y + z
 
-print(task32(2,2,3))
-print(task32(2,4,3))
+
+print(task32(2, 2, 3))
+print(task32(2, 4, 3))
 
 """Write a Python program to sum of two given integers. However, if the sum is between 15 to 20 it will return 20."""
+
+
 def task33(x, y):
     sumResult = x + y
     return 20 if sumResult > 14 and sumResult < 20 else sumResult
 
-print(task33(5,10))
+
+print(task33(5, 10))
 
 """Write a Python program that will return true if the two given integer values are equal or their sum or difference is 5"""
+
+
 def task34(x, y):
     return True if x == y or x + y == 5 or x - y == 5 else False
-print(task34(2,2))
-print(task34(2,3))
-print(task34(5,0))
+
+
+print(task34(2, 2))
+print(task34(2, 3))
+print(task34(5, 0))
 
 """Write a Python program to add two objects if both objects are an integer type."""
+
+
 def task35(x, y):
-    if isinstance(x,int) and isinstance(y,int): return x + y
-print(task35(1,2))
-print(task35("dupa",2))
+    if isinstance(x, int) and isinstance(y, int): return x + y
+
+
+print(task35(1, 2))
+print(task35("dupa", 2))
 
 """Write a Python program to display your details like name, age, address in three different lines."""
+
+
+def task36(sName, iAge, sAdress):
+    print(sName)
+    print(iAge)
+    print(sAdress)
+    print("Name : {}\nAge : {}\nAdress: {}".format(sName,iAge,sAdress))
+
+
+task36("Piotr", 28, "Pokoju")
+
+""" Write a Python program to solve (x + y) * (x + y)."""
+def task37(x, y):
+    return (x + y)**2
+print(task37(2,3))
+
+"""Write a Python program to compute the distance between the points (x1, y1) and (x2, y2)."""
+def task38(x1,x2,y1,y2):
+    return math.sqrt(((x1-x2)**2)+((y1-y2)**2))
+print((task38(1,2,3,4)))
+
+"""Write a Python program to check whether a file exists"""
+def task39(filepath):
+    return True if os.path.isfile(filepath) else False
+
+print(task39(r"C:\temp\license.txt"))
+
+"""""Write a Python program to determine if a Python shell is executing in 32bit or 64bit mode on OS"""
+def task40():
+    print(platform.architecture())
+
+task40()
+
+"""Write a Python program to get OS name, platform and release information."""
+def task41():
+    print("OS name: {}\nPlatform: {}\nRelease version: {}".format(platform.system(), platform.platform(), platform.release()))
+
+task41()
