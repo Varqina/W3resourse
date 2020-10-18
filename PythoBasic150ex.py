@@ -386,3 +386,65 @@ def task29(fBase, fHeight):
     return 0.5 * fBase * fHeight
 
 print(task29(1.222, 3.444))
+
+"""Write a Python program to compute the greatest common divisor (GCD) of two positive integers."""
+def task30(x, y):
+    value = y
+    while value != 0:
+        value = x % y
+        if value != 0:
+            x = y
+            y = value
+        else:
+            return y
+
+print(task30(282,78))
+
+
+"""Write a Python program to get the least common multiple (LCM) of two positive integers"""
+
+def task31(x, y):
+    if x < y:
+        hValue = y
+        y = x
+        x = hValue
+        i=2
+    while True:
+        if i % x == 0 and i % y == 0:
+            result = i
+            break
+        i += 1
+    return result
+
+print(task31(15,17))
+
+"""Write a Python program to sum of three given integers. However, if two values are equal sum will be zero"""
+def task32(x, y, z):
+    if x == y or y == z or z == x:
+        return 0
+    return x + y + z
+
+print(task32(2,2,3))
+print(task32(2,4,3))
+
+"""Write a Python program to sum of two given integers. However, if the sum is between 15 to 20 it will return 20."""
+def task33(x, y):
+    sumResult = x + y
+    return 20 if sumResult > 14 and sumResult < 20 else sumResult
+
+print(task33(5,10))
+
+"""Write a Python program that will return true if the two given integer values are equal or their sum or difference is 5"""
+def task34(x, y):
+    return True if x == y or x + y == 5 or x - y == 5 else False
+print(task34(2,2))
+print(task34(2,3))
+print(task34(5,0))
+
+"""Write a Python program to add two objects if both objects are an integer type."""
+def task35(x, y):
+    if isinstance(x,int) and isinstance(y,int): return x + y
+print(task35(1,2))
+print(task35("dupa",2))
+
+"""Write a Python program to display your details like name, age, address in three different lines."""
