@@ -1,2 +1,6 @@
-thiset={1,2,3,4,5,5}
-print(thiset)
+import random
+char_list = ['a', 'e', 'i', 'o', 'u']
+
+
+
+
