@@ -21,6 +21,7 @@ def print_all_possible_strings():
     result_set = generate_all_strings_from_list_set(factorial_int, char_list)
     print(transform_set_to_string(result_set))
 
+
 def count_factorial_int(number_int):
     """Count factorial for number_int"""
     result = 1  # needs to be 1, when 0 result always 0
@@ -46,16 +47,17 @@ def transform_set_to_string(value_set):
         result_string = result_string + str(i) + " "
     return result_string
 
+
 print_all_possible_strings()
 
 """Write a Python program to remove and print every third number from a list of numbers until the list becomes empty."""
+
 
 def task3(number_list):
     """If finished row, start from beginning"""
     help_value_int = 2
     while len(number_list) > 2:
         if len(number_list) > help_value_int:
-            print(number_list)
             print(number_list[help_value_int])
             number_list.pop(help_value_int)
             help_value_int += 2
@@ -65,8 +67,24 @@ def task3(number_list):
     print(number_list[1])
     print(number_list[0])
 
+
 def task4(number_list):
     """Continue counting even row is finished"""
+    counter_int = 2
+    while len(number_list) != 0:
+        if len(number_list) > counter_int:
+            print(number_list[counter_int])
+            number_list.pop(counter_int)
+            counter_int += 2
+        else:
+            counter_int = len(number_list) - counter_int
+            counter_int = abs(counter_int)
 
-nums = [10,20,30,40,50,60,70,80,90]
-task3(nums)
+
+nums = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+task4(nums)
+
+"""Write a Python program to find unique triplets whose three elements gives the sum of zero from an array of n 
+integers """
+
+
