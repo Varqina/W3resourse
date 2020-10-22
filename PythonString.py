@@ -24,9 +24,23 @@ def create_string_from_prefix_and_suffix(input_string):
     else:
         return ""
 
-def test_create_string_from_prefix_and_suffix(input_string, expected_string):
+
+def is_test_create_string_from_prefix_and_suffix(input_string, expected_string):
     return True if create_string_from_prefix_and_suffix(input_string) == expected_string else False
 
-print(test_create_string_from_prefix_and_suffix('w3resource', 'w3ce'))
-print(test_create_string_from_prefix_and_suffix('w3', 'w3w3'))
-print(test_create_string_from_prefix_and_suffix(' w', ""))
+
+print(is_test_create_string_from_prefix_and_suffix('w3resource', 'w3ce'))
+print(is_test_create_string_from_prefix_and_suffix('w3', 'w3w3'))
+print(is_test_create_string_from_prefix_and_suffix(' w', ""))
+
+"""Write a Python program to get a string from a given string where all occurrences of its first char have been changed to '$', except the first char itself. Go to the editor
+Sample String : 'restart'
+Expected Result : 'resta$t'"""
+
+
+def change_all_characters_by_first_expect_first_string(input_string):
+    first_character = input_string[0]
+    input_string = input_string.replace(first_character,"$")
+    print(first_character + input_string[1:])
+
+change_all_characters_by_first_expect_first_string("restart")
