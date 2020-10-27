@@ -2,12 +2,14 @@
 from Python37_win64.Lib import string
 from Python37_win64.Lib.random import randint
 
+import DataGenerator
+
 
 def sum_list_print(list_of_ints):
     result = 0
     for element in list_of_ints:
         result += element
-    print(result)
+    #print(result)
 
 
 test_list = [1, 2, 3, 3, 3, 4, 5]
@@ -21,7 +23,7 @@ def find_highest_value_print(list_of_ints):
     for element in list_of_ints:
         if element > highest_value:
             highest_value = element
-    print(highest_value)
+    #print(highest_value)
 
 
 test_list = [1, 1, 2, 1, 55, 66, 77, 44, 33]
@@ -42,7 +44,7 @@ def get_count_for_task_int(list_of_strings):
 
 
 test_list = ['abc', 'xyz', 'aba', '1221']
-print(get_count_for_task_int(test_list))
+#print(get_count_for_task_int(test_list))
 
 """Write a Python program to get a list, sorted in increasing order by the last element in each tuple from a given list
  of non-empty tuples. Go to the editor
@@ -56,7 +58,7 @@ def sort_by_second_tuple(tuple):
 
 def get_sorted_list(list_of_tuples):
     list_of_tuples.sort(key=sort_by_second_tuple)
-    print(list_of_tuples)
+    #print(list_of_tuples)
 
 
 test_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
@@ -67,14 +69,19 @@ get_sorted_list(test_list)
 
 
 def remove_all_duplicates(list_of_elements):
+
     number_of_elements_in_list = 0
     result_list = []
     for element in list_of_elements:
         if result_list.count(element) == 0:
             result_list.append(element)
-    print(result_list)
+    if len(list_of_elements) == len(result_list):
+        print("no duplicates")
+    return result_list
 
 
 test_list = [1, 2, 3, 1, 1, 'ala', 'lala', 'ala']
-remove_all_duplicates(test_list)
+
+for i in range(0,1):
+    remove_all_duplicates(DataGenerator.generate_testing_list(True,True,True,True))
 

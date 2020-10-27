@@ -24,7 +24,7 @@ def generate_random_list(depth=0):
                                                            [randint(0, len(string.printable) - 1)])
         if random_int_value == 2: temporary_tuple_list.append(generate_random_tuple(2))
         # if random_int_value == 3: add dictionary
-        # if random_int_value == 4: add list
+        if random_int_value == 4: temporary_tuple_list.append(generate_random_list(2))
     return temporary_tuple_list
 
 
@@ -37,7 +37,6 @@ def generate_random_tuple(depth=0):
     """depth parameter is used to avoid recursion depth error"""
     return tuple(generate_random_list(depth))
 
-
 def generate_testing_list(ints=False, strings=False, tuples=False, dictionaries=False, lists=False):
     testing_list = []
     list_length = randint(5, 20)
@@ -48,9 +47,10 @@ def generate_testing_list(ints=False, strings=False, tuples=False, dictionaries=
         if dictionaries: testing_list.append(generate_random_dictionary())
         if lists: testing_list.append(generate_random_list())
 
+    #need to sort it
     return testing_list
 
-for i in range(1):
-    print(str(i) + " " + str(generate_testing_list(ints=True, strings= True, tuples=True, dictionaries=True, lists=True)))
+#for i in range(1):
+#    print(str(i) + " " + str(generate_testing_list(ints=True, strings= True, tuples=True, dictionaries=True, lists=True)))
 
 
