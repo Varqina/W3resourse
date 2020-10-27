@@ -1,4 +1,6 @@
 """Write a Python program to sum all the items in a list."""
+from Python37_win64.Lib import string
+from Python37_win64.Lib.random import randint
 
 
 def sum_list_print(list_of_ints):
@@ -76,4 +78,3 @@ def remove_all_duplicates(list_of_elements):
 test_list = [1, 2, 3, 1, 1, 'ala', 'lala', 'ala']
 remove_all_duplicates(test_list)
 
-def generate_testing_list(ints = False, strings = False, tuples = False, dictionaries = False, lists= False ):
