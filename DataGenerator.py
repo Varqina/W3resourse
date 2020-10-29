@@ -65,7 +65,5 @@ def generate_testing_list(ints=False, strings=False, tuples=False, dictionaries=
         if dictionaries: testing_list.append(generate_random_dictionary())
         if lists: testing_list.append(generate_random_list())
 
-    print(testing_list)
     testing_list.sort(key=sort_list_random)
-    print(testing_list)
     return testing_list

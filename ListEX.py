@@ -84,6 +84,16 @@ def remove_all_duplicates(list_of_elements):
 
 test_list = [1, 2, 3, 1, 1, 'ala', 'lala', 'ala']
 
-for i in range(0,5):
-    DataGenerator.generate_testing_list(True)
 
+"""Write a Python program to clone or copy a list."""
+def copy_list():
+    list = DataGenerator.generate_testing_list(True)
+    list2 = []
+    for element in list:
+        list2.append(element)
+
+
+"""Write a Python program to print the numbers of a specified list after removing even numbers from it."""
+def remove_even_number_and_reutrn_index():
+    list = DataGenerator.generate_testing_list(True)
+    print(list)
