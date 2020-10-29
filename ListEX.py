@@ -77,11 +77,13 @@ def remove_all_duplicates(list_of_elements):
             result_list.append(element)
     if len(list_of_elements) == len(result_list):
         print("no duplicates")
+    else:
+        print("There was a duplicate")
     return result_list
 
 
 test_list = [1, 2, 3, 1, 1, 'ala', 'lala', 'ala']
 
-for i in range(0,1):
-    remove_all_duplicates(DataGenerator.generate_testing_list(True,True,True,True))
+for i in range(0,5):
+    DataGenerator.generate_testing_list(True)
 
