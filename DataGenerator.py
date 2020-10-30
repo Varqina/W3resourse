@@ -44,6 +44,7 @@ def generate_random_dictionary(depth=0):
 
 
 def generate_random_int(range=60):
+    """depth parameter is used to avoid recursion depth error"""
     return randint(1, range)
 
 
@@ -54,6 +55,7 @@ def generate_random_tuple(depth=0):
 
 def sort_list_random(e):
     return len(str(e)) + generate_random_int(200)
+
 
 def generate_testing_list(ints=False, strings=False, tuples=False, dictionaries=False, lists=False):
     testing_list = []
