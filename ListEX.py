@@ -135,16 +135,34 @@ def look_for_empty_character_in_string(string_element, result_list):
         result_list.append(string_element)
 
 
+def look_for_empty_character_in_list(element, result_list):
+    if isinstance(element, list):
+        for value in element:
+            run_search_for_empty_character(value, result_list)
+
+
+def look_for_empty_character_in_dictionary(element, result_list):
+    @todo "check if it is other coletcio and invoke remaning things"
+    pass
+
+
+def look_for_empty_character_in_tuple(element, result_list):
+    if isinstance(element, tuple):
+        element = list(element)
+        look_for_empty_character_in_list(element,result_list)
+
+
 def run_search_for_empty_character(object_element, result_list):
     for element in object_element:
         look_for_empty_character_in_string(element, result_list)
-        look_for_empty_character_in_collection(element, result_list)
-        # @todo look_for_empty_character_in_dictionary
+        look_for_empty_character_in_list(element, result_list)
+        look_for_empty_character_in_dictionary(element, result_list)
+        look_for_empty_character_in_tuple(element, result_list)
 
 
 def look_for_empty_character_in_collection(collection_element, result_list):
     if isinstance(collection_element, list) or isinstance(collection_element, dict) \
-            or isinstance(collection_element, tuple):
+            or isinstance(collection_element, tuple) or isinstance(collection_element, dict):
         run_search_for_empty_character(collection_element, result_list)
 
 
