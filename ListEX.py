@@ -131,15 +131,15 @@ def insert_int_before_each_element():
 
 
 def look_for_empty_character_in_string(string_element, result_list):
-
     if isinstance(string_element, str) and string_element.find(" ") > 0:
         result_list.append(string_element)
+
 
 def run_search_for_empty_character(object_element, result_list):
     for element in object_element:
         look_for_empty_character_in_string(element, result_list)
         look_for_empty_character_in_collection(element, result_list)
-        #@todo look_for_empty_character_in_dictionary
+        # @todo look_for_empty_character_in_dictionary
 
 
 def look_for_empty_character_in_collection(collection_element, result_list):
@@ -158,4 +158,27 @@ def return_list_of_elements_with_space():
     print(result_list)
 
 
-return_list_of_elements_with_space()
+"""Write a Python program to round the numbers of a given list, print the minimum and maximum numbers and multiply 
+the numbers by 5. Print the unique numbers in ascending order separated by space. """
+
+
+def print_max_and_min():
+    testing_list = DataGenerator.generate_testing_list(True)
+    max_int = None
+    min_int = None
+    result_tab = []
+    for element in testing_list:
+        if isinstance(element, int):
+            if max_int is None or element > max_int:
+                max_int = element
+            if min_int is None or element < min_int:
+                min_int = element
+            if result_tab.count(element) == 0:
+                result_tab.append(element)
+    result_tab.sort()
+    print(result_tab)
+    print(max_int)
+    print(min_int)
+
+
+print_max_and_min()

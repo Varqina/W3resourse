@@ -44,7 +44,6 @@ def generate_random_dictionary(depth=0):
 
 
 def generate_random_int(range=60):
-    """depth parameter is used to avoid recursion depth error"""
     return randint(1, range)
 
 
