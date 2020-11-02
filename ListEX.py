@@ -142,7 +142,7 @@ def look_for_empty_character_in_list(element, result_list):
 
 
 def look_for_empty_character_in_dictionary(element, result_list):
-    @todo "check if it is other coletcio and invoke remaning things"
+    """check if it is other coercion and invoke remaining things"""
     pass
 
 
